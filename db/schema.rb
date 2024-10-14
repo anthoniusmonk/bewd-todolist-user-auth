@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_10_09_163350) do
+ActiveRecord::Schema.define(version: 2024_10_14_143813) do
 
   create_table "sessions", force: :cascade do |t|
     t.string "session_token"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2024_10_09_163350) do
     t.datetime "updated_at", null: false
     t.string "content"
     t.boolean "completed", default: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2024_10_09_163350) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "password"
+    t.string "password_digest"
   end
 
 end
